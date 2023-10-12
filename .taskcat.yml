@@ -1,11 +1,11 @@
 project:
-  name: connect-integration-servicenow-itsm
+  name: cfn-ps-connect-integration-servicenow-itsm
   owner: tom.huguenard@waterfield.com
   package_lambda: false
   regions:
     - us-east-1
 tests:
-  connect-integration-servicenow-itsm:
+  cfn-ps-connect-integration-servicenow-itsm:
     parameters:
       ConnectInstanceId: $[alfred_genuuid]
       ServiceNowHost: $[alfred_genuuid]
