@@ -54,7 +54,7 @@ Parameters:
       uppercase letters, and hyphens but should not start or end with a hyphen.
     Type: String
 Conditions:
-  UsingDefaultBucket: !Equals [!Ref QSS3BucketName, "aws-quickstart"]
+  UsingDefaultBucket: !Equals [!Ref QSS3BucketName, "aws-ia"]
 Resources:
   InvokeServiceNowIntegrationTestFunction:
     Type: Custom::InvokeServiceNowIntegrationTestFunction
@@ -124,7 +124,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/CreateIncident/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/CreateIncident/lambda.zip
       Description: ServiceNow CreateIncident
       Environment:
         Variables:
@@ -223,7 +223,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/CreateIncidentByPhone/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/CreateIncidentByPhone/lambda.zip
       Description: ServiceNow CreateIncidentByPhone
       Environment:
         Variables:
@@ -322,7 +322,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/GetIncidentByPhone/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/GetIncidentByPhone/lambda.zip
       Description: ServiceNow GetIncidentByPhone
       Environment:
         Variables:
@@ -421,7 +421,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/GetIncidentState/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/GetIncidentState/lambda.zip
       Description: ServiceNow GetIncidentState
       Environment:
         Variables:
@@ -520,7 +520,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/GetLatestStateByPhone/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/GetLatestStateByPhone/lambda.zip
       Description: ServiceNow GetLatestStateByPhone
       Environment:
         Variables:
@@ -617,7 +617,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
-        S3Key: connect-integration-servicenow-itsm/functions/packages/integrationTest/lambda.zip
+        S3Key: cfn-ps-connect-integration-servicenow-itsm/functions/packages/integrationTest/lambda.zip
       Description: ServiceNow IntegrationTest
       Environment:
         Variables:
